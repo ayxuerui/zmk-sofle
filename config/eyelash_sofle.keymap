@@ -28,6 +28,8 @@
 
 &soft_off { hold-time-ms = <2000>; };
 
+&mt { flavor = "balanced"; };
+
 / {
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
@@ -35,16 +37,6 @@
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
         tap-ms = <100>;
-    };
-
-    new_behavior: new_behavior {
-        compatible = "zmk,behavior-hold-tap";
-        label = "NEW_BEHAVIOR";
-        bindings = <&none>, <&none>;
-
-        #binding-cells = <2>;
-        flavor = "balanced";
-        tapping-term-ms = <200>;
     };
 
     behaviors {
